@@ -8,6 +8,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 public class Handle {
+    //testo di prova
 
     private static File[] fileList;
     private static Queue q = new Queue(3);
