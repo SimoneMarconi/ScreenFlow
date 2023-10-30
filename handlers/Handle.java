@@ -17,7 +17,7 @@ public class Handle {
     final private static int screenWidth = (int) size.getWidth();
 
     public static File[] loadFiles(){
-        File folder = new File("C:\\Users\\simo\\Projects\\Java\\ScreenSaver\\public");
+        File folder = new File("C:\\Users\\Simone\\Projects\\Java\\ScreenFlow\\public");
         fileList = folder.listFiles();
 
         for(File file : fileList){
