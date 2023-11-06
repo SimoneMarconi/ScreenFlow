@@ -5,10 +5,10 @@ import javax.swing.JFrame;
 
 public class Listener implements KeyListener{
 
-    private MyPanel panel;
+    private ImagePanel panel;
     private JFrame frame;
 
-    public Listener(MyPanel p, JFrame f){
+    public Listener(ImagePanel p, JFrame f){
         this.frame = f;
         this.panel = p;
     }

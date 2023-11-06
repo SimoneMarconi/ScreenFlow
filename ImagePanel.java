@@ -3,11 +3,11 @@ import java.awt.Graphics;
 import java.awt.Image;
 import handlers.*;
 
-public class MyPanel extends JPanel{
+public class ImagePanel extends JPanel{
 
     Image image;
 
-    public MyPanel(Image img){
+    public ImagePanel(Image img){
         this.image = img;
     }
 

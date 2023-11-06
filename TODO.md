@@ -3,8 +3,8 @@ aggiungere un controllo per la casualità della selazione delle immagini
 
 
 DOING
-aggiungere il collegamento al database
+aggiungere l'interfaccia iniziale
 
 
 TO DO
-aggiungere l'interfaccia iniziale
+aggiungere il collegamento al database

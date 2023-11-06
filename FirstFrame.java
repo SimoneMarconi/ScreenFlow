@@ -1,0 +1,27 @@
+import java.util.Hashtable;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JSlider;
+
+public class FirstFrame extends JFrame{
+
+    final int maxs = 300;
+    final int mins = 5;
+    final int base = 10;
+
+    public FirstFrame(){
+        this.setSize(600, 300);
+        JSlider slider = new JSlider(JSlider.VERTICAL, mins, maxs, base);
+        this.add(slider);
+
+        Hashtable<Integer, JLabel> table = new Hashtable<Integer, JLabel>();
+        table.put(0, new JLabel("5 sec"));
+        table.put(maxs/2, new JLabel("2.30 min"));
+        table.put(maxs, new JLabel("5 min"));
+
+
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }    
+}
