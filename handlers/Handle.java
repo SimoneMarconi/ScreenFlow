@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class Handle {
 
     private static File[] fileList;
-    private static Queue q = new Queue(3);
+    private static Queue q = new Queue(5);
 
     private static Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
     final private static int screenHeight = (int) size.getHeight();
