@@ -4,6 +4,8 @@ import components.*;
 
 public class FirstFrame extends JFrame{
 
+    private static Slider slider;
+
     public FirstFrame(){
         
         this.setSize(600, 300);
@@ -11,7 +13,7 @@ public class FirstFrame extends JFrame{
         Label label = new Label();
         this.add(label, BorderLayout.PAGE_START);
 
-        Slider slider = new Slider();
+        slider = new Slider();
         this.add(slider, BorderLayout.LINE_START);
 
         Center center = new Center(ImageFrame.class);
@@ -25,4 +27,8 @@ public class FirstFrame extends JFrame{
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }    
+
+    public static Slider getSlider(){
+        return slider;
+    }
 }

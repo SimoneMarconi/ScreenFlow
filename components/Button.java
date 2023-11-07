@@ -3,13 +3,16 @@ package components;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.JButton;
 
 public class Button extends JButton implements ActionListener{
 
     private Class c;
+    private Radio radio;
 
-    public <T> Button(String text, Class<T> c){
+    public <T> Button(String text, Class<T> c, Radio radio){
+        this.radio = radio;
         this.c = c;
         this.setText(text);
         this.setSize(30, 20);
@@ -21,11 +24,19 @@ public class Button extends JButton implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(this.getModel().isArmed()){
             try{
-            c.getDeclaredConstructor().newInstance();
+                if(radio.getSelected().equals("local")){//controlla se la modalità è local
+                    File localDir = new File("../public");
+                    if(localDir.listFiles() == null){
+                        System.out.println("Images not loaded");
+                        return;
+                    }
+                    c.getDeclaredConstructor().newInstance();
+                }else if(radio.getSelected().equals("online")){
+                    System.out.println("database fetch");
+                }
             }catch(Exception err){
                 System.err.println(err);
             }
-        // ImageFrame frame = new ImageFrame();
         }
     }
 }

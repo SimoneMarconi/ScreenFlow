@@ -1,10 +1,11 @@
 DONE
 aggiungere un controllo per la casualità della selazione delle immagini
-
+aggiungere l'interfaccia iniziale
+radio buttons
+start button
 
 DOING
-aggiungere l'interfaccia iniziale
-
+slider
 
 TO DO
 aggiungere il collegamento al database

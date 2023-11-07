@@ -20,7 +20,6 @@ public class Handle {
         File folder = new File("../public");
         System.out.println(folder);
         fileList = folder.listFiles();
-
         for(File file : fileList){
             System.out.println(file.getAbsolutePath());
         }

@@ -14,7 +14,6 @@ public class ImagePanel extends JPanel{
     public void updateImage(){
         Image rImage = Handle.getRandomImage();
         this.image = rImage;
-        // System.out.println(rImage);
         this.revalidate();
         this.repaint();
     }

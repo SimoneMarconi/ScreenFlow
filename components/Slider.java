@@ -22,8 +22,8 @@ public class Slider extends JSlider{
         this.setOrientation(JSlider.VERTICAL);
         this.setPaintTrack(true);
         this.setPaintTicks(true);
-        this.setMajorTickSpacing(50);
-        this.setMinorTickSpacing(10);
+        this.setMajorTickSpacing(25);
+        this.setMinorTickSpacing(5);
         this.setSnapToTicks(true);
         this.setLabelTable(table);
         this.setPaintLabels(true);

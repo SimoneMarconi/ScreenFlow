@@ -1,14 +1,12 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.JFrame;
-
 public class Listener implements KeyListener{
 
     private ImagePanel panel;
-    private JFrame frame;
+    private ImageFrame frame;
 
-    public Listener(ImagePanel p, JFrame f){
+    public Listener(ImagePanel p, ImageFrame f){
         this.frame = f;
         this.panel = p;
     }
@@ -23,6 +21,7 @@ public class Listener implements KeyListener{
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
             System.out.println("closing");
             frame.dispose();
+            frame.stopCycle();
             return;
         }
 

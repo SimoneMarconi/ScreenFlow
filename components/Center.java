@@ -8,8 +8,8 @@ public class Center extends JPanel{
 
     public <T> Center(Class<T> c){
         this.setLayout(new BorderLayout());
-        TopCenter a = new TopCenter(c);
         Radio b = new Radio();
+        TopCenter a = new TopCenter(c, b);
         this.add(a, BorderLayout.NORTH);
         this.add(b, BorderLayout.SOUTH);
     }
