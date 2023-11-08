@@ -6,23 +6,33 @@ public class Queue {
     private int tail = 0;
 
     public Queue(int i){
-        this.array = new int[i];
+        if(i == 0){
+            this.array = null;
+        }else{
+            this.array = new int[i];
+        }
     }
 
     public void add(int s){
+        if(this.array == null){
+            return;
+        }
         if(tail < array.length){
-            array[tail] = s;
+            this.array[tail] = s;
             tail++;
         }else{
-            //free the space
+            //free the space 
             for(int i = 0; i < array.length - 1; i++){
-                array[i] = array[i + 1];
+                this.array[i] = this.array[i + 1];
             }
-            array[tail - 1] = s;
+            this.array[tail - 1] = s;
         }
     }
 
     public boolean search(int s){
+        if(this.array == null){
+            return false;
+        }
         for(int ele : array){
             if(ele == s){
                 return true;

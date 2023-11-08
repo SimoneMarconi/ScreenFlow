@@ -1,7 +1,7 @@
 import java.awt.BorderLayout;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
+
 import components.*;
 
 public class FirstFrame extends JFrame{
@@ -21,8 +21,8 @@ public class FirstFrame extends JFrame{
         Center center = new Center(ImageFrame.class);
         this.add(center, BorderLayout.CENTER);
 
-        JButton secondButton = new JButton("DRAG");
-        this.add(secondButton, BorderLayout.LINE_END);
+        DropPanel drop = new DropPanel();
+        this.add(drop, BorderLayout.LINE_END);
 
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

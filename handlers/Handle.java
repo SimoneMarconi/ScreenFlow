@@ -10,16 +10,34 @@ import javax.imageio.ImageIO;
 public class Handle {
 
     private static File[] fileList;
-    private static Queue q = new Queue(5);
+    private static File folder;
+    private static Queue q;
 
     private static Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
     final private static int screenHeight = (int) size.getHeight();
     final private static int screenWidth = (int) size.getWidth();
 
-    public static File[] loadFiles(){
-        File folder = new File("../public");
+    public static File[] loadFiles(File dpath){
+        if(dpath != null){
+            folder = dpath;
+        }else{
+            folder = new File("../public");
+        }
         System.out.println(folder);
         fileList = folder.listFiles();
+        if(fileList.length == 0){
+            System.out.println("empty folder inserted");
+            return null;
+        }
+
+        int idx = fileList.length;
+        if(idx == 1){
+            idx = 0;
+        }else{
+            idx = fileList.length/2;
+        }
+        q = new Queue(idx);
+
         for(File file : fileList){
             System.out.println(file.getAbsolutePath());
         }
