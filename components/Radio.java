@@ -12,7 +12,7 @@ public class Radio extends JPanel{
     private JRadioButton base;
 
     public Radio(){
-        local = new JRadioButton("Local"); 
+        local = new JRadioButton("Imported"); 
         online = new JRadioButton("Online");
         base = new JRadioButton("Default");
         base.setSelected(true);
@@ -32,7 +32,7 @@ public class Radio extends JPanel{
 
     public String getSelected(){
         if(local.isSelected()){
-            return "local";
+            return "imported";
         }else if(online.isSelected()){
             return "online";
         }else if(base.isSelected()){

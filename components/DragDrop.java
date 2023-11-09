@@ -29,7 +29,12 @@ public class DragDrop extends DropTarget {
                     Object files = trans.getTransferData(flavor);
                     String file = files.toString();
                     String path = file.substring(1, file.length()-1);
-                    DropPanel.dropped = new File(path);
+                    File folder = new File(path);
+                    if(!folder.isDirectory()){
+                        System.out.println("File inserted is not a folder");
+                        return;
+                    }
+                    DropPanel.dropped = folder;
                     dropped = true;
                 }
             }catch(Exception e){

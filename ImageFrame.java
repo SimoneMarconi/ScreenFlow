@@ -32,12 +32,17 @@ public class ImageFrame extends JFrame{
     }
 
     private void cycle(){
+        if(FirstFrame.check()){
+            return;
+        }
         Slider slider = FirstFrame.getSlider();
         int val = slider.getValue();
         c = new Clock(panel, val);
     }
 
     public void stopCycle(){
-        c.stop();
+        if(c != null){
+            c.stop();
+        }
     }
 }

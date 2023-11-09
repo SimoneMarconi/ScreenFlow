@@ -7,6 +7,7 @@ import components.*;
 public class FirstFrame extends JFrame{
 
     private static Slider slider;
+    private static Center center;
 
     public FirstFrame(){
         
@@ -18,7 +19,7 @@ public class FirstFrame extends JFrame{
         slider = new Slider();
         this.add(slider, BorderLayout.LINE_START);
 
-        Center center = new Center(ImageFrame.class);
+        center = new Center(ImageFrame.class);
         this.add(center, BorderLayout.CENTER);
 
         DropPanel drop = new DropPanel();
@@ -32,5 +33,9 @@ public class FirstFrame extends JFrame{
 
     public static Slider getSlider(){
         return slider;
+    }
+
+    public static Boolean check(){
+        return center.check.isSelected();
     }
 }

@@ -24,13 +24,7 @@ public class Button extends JButton implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(this.getModel().isArmed()){
             try{
-                if(radio.getSelected().equals("local")){//controlla se la modalità è local
-                    // File localDir = new File("../public");
-                    // if(localDir.listFiles() == null){
-                    //     System.out.println("Images not loaded");
-                    //     return;
-                    // }
-                    // c.getDeclaredConstructor().newInstance();
+                if(radio.getSelected().equals("imported")){//controlla se la modalità è local
                     if(!DragDrop.dropped){
                         System.out.println("Files not loaded");
                     }else{

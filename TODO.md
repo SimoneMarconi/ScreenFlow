@@ -7,7 +7,7 @@ slider
 local import drag and drop
 
 DOING
-(crea due variabili per gestire i file locali e quelli di default)
+insert checkbox for manual change
 
 TO DO
 aggiungere il collegamento al database
