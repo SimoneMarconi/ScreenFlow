@@ -4,6 +4,7 @@ package components;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+
 import javax.swing.JButton;
 
 public class Button extends JButton implements ActionListener{
@@ -25,9 +26,10 @@ public class Button extends JButton implements ActionListener{
         if(this.getModel().isArmed()){
             try{
                 if(radio.getSelected().equals("imported")){//controlla se la modalità è local
-                    if(!DragDrop.dropped){
-                        System.out.println("Files not loaded");
+                    if(DropButton.importedFolder == null){
+                        System.out.println("Images not loaded");
                     }else{
+                        DropButton.imported = DropButton.importedFolder;
                         c.getDeclaredConstructor().newInstance();
                     }
                 }else if(radio.getSelected().equals("online")){
@@ -38,7 +40,7 @@ public class Button extends JButton implements ActionListener{
                         System.out.println("Images not loaded");
                         return;
                     }
-                    DropPanel.dropped = localDir;
+                    DropButton.imported = localDir;
                     c.getDeclaredConstructor().newInstance();
                 }
             }catch(Exception err){

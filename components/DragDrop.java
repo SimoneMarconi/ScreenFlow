@@ -11,7 +11,7 @@ import java.io.File;
 
 public class DragDrop extends DropTarget {
 
-    public static Boolean dropped = false;
+    public static Boolean imported = false;
 
    @Override
     public void drop(DropTargetDropEvent event){
@@ -34,8 +34,8 @@ public class DragDrop extends DropTarget {
                         System.out.println("File inserted is not a folder");
                         return;
                     }
-                    DropPanel.dropped = folder;
-                    dropped = true;
+                    DropButton.imported = folder;
+                    imported = true;
                 }
             }catch(Exception e){
                 e.printStackTrace();

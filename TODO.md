@@ -5,9 +5,10 @@ radio buttons
 start button
 slider
 local import drag and drop
+insert checkbox for manual change
+insert file without drop
 
 DOING
-insert checkbox for manual change
 
 TO DO
 aggiungere il collegamento al database

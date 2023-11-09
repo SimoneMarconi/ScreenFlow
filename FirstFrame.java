@@ -22,7 +22,7 @@ public class FirstFrame extends JFrame{
         center = new Center(ImageFrame.class);
         this.add(center, BorderLayout.CENTER);
 
-        DropPanel drop = new DropPanel();
+        DropButton drop = new DropButton();
         this.add(drop, BorderLayout.LINE_END);
 
         this.setResizable(false);

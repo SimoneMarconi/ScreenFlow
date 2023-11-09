@@ -1,7 +1,6 @@
 import java.awt.Image;
 import javax.swing.JFrame;
-
-import components.DropPanel;
+import components.DropButton;
 import components.Slider;
 import handlers.*;
 
@@ -12,7 +11,7 @@ public class ImageFrame extends JFrame{
 
     public ImageFrame(){
 
-        if(Handle.loadFiles(DropPanel.dropped) != null){
+        if(Handle.loadFiles(DropButton.imported) != null){
             Image image = Handle.getRandomImage();
 
             this.setExtendedState(JFrame.MAXIMIZED_BOTH);//fa in modo che le dimensioni della finestra siano grandi come tutto lo schermo
