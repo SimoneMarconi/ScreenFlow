@@ -25,12 +25,17 @@ public class Button extends JButton implements ActionListener{
         if(this.getModel().isArmed()){
             try{
                 if(radio.getSelected().equals("local")){//controlla se la modalità è local
-                    File localDir = new File("../public");
-                    if(localDir.listFiles() == null){
-                        System.out.println("Images not loaded");
-                        return;
+                    // File localDir = new File("../public");
+                    // if(localDir.listFiles() == null){
+                    //     System.out.println("Images not loaded");
+                    //     return;
+                    // }
+                    // c.getDeclaredConstructor().newInstance();
+                    if(!DragDrop.dropped){
+                        System.out.println("Files not loaded");
+                    }else{
+                        c.getDeclaredConstructor().newInstance();
                     }
-                    c.getDeclaredConstructor().newInstance();
                 }else if(radio.getSelected().equals("online")){
                     System.out.println("database fetch");
                 }else if(radio.getSelected().equals("default")){
@@ -39,6 +44,7 @@ public class Button extends JButton implements ActionListener{
                         System.out.println("Images not loaded");
                         return;
                     }
+                    DropPanel.dropped = localDir;
                     c.getDeclaredConstructor().newInstance();
                 }
             }catch(Exception err){

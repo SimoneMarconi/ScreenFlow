@@ -11,6 +11,8 @@ import java.io.File;
 
 public class DragDrop extends DropTarget {
 
+    public static Boolean dropped = false;
+
    @Override
     public void drop(DropTargetDropEvent event){
         //accetta i drop che devono copiare il file
@@ -28,6 +30,7 @@ public class DragDrop extends DropTarget {
                     String file = files.toString();
                     String path = file.substring(1, file.length()-1);
                     DropPanel.dropped = new File(path);
+                    dropped = true;
                 }
             }catch(Exception e){
                 e.printStackTrace();
