@@ -33,6 +33,13 @@ public class Button extends JButton implements ActionListener{
                     c.getDeclaredConstructor().newInstance();
                 }else if(radio.getSelected().equals("online")){
                     System.out.println("database fetch");
+                }else if(radio.getSelected().equals("default")){
+                    File localDir = new File("../public");
+                    if(localDir.listFiles() == null){
+                        System.out.println("Images not loaded");
+                        return;
+                    }
+                    c.getDeclaredConstructor().newInstance();
                 }
             }catch(Exception err){
                 System.err.println(err);
