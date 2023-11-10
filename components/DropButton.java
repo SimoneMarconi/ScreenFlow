@@ -31,7 +31,7 @@ public class DropButton extends JButton implements ActionListener{
                     importedFolder = file;
                 }
             }
-            System.out.println(imported);
+            System.out.println(importedFolder);
         }
     }
 }
