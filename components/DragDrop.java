@@ -34,7 +34,7 @@ public class DragDrop extends DropTarget {
                         System.out.println("File inserted is not a folder");
                         return;
                     }
-                    DropButton.imported = folder;
+                    DropButton.importedFolder = folder;
                     imported = true;
                 }
             }catch(Exception e){
