@@ -1,4 +1,8 @@
+import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Robot;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 import components.DropButton;
 import components.Slider;
@@ -21,6 +25,14 @@ public class ImageFrame extends JFrame{
             this.add(panel);
             
             this.addKeyListener(new Listener(panel, this));
+
+            try{
+                Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+                Robot r = new Robot();
+                r.mouseMove((int)d.getWidth(), 0);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
 
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.setVisible(true);
