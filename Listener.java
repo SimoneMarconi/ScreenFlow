@@ -1,5 +1,9 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Listener implements KeyListener{
 
@@ -25,6 +29,20 @@ public class Listener implements KeyListener{
             System.out.println("closing");
             frame.dispose();
             frame.stopCycle();
+            Path path = FileSystems.getDefault().getPath("output").toAbsolutePath();
+            File dir = path.toFile();
+            if(dir.isDirectory()){
+                System.out.println("elimino");
+                File[] fileList = dir.listFiles();
+                for(File ele : fileList){
+                    ele.delete();
+                }
+                try{
+                    Files.delete(path);
+                }catch(Exception err){
+                    err.printStackTrace();
+                }
+            }
             return;
         }
 
@@ -36,3 +54,4 @@ public class Listener implements KeyListener{
     public void keyTyped(KeyEvent e ){
     }
 }
+

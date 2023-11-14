@@ -3,6 +3,8 @@ package components;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 
 import javax.swing.JButton;
 
@@ -32,9 +34,13 @@ public class Button extends JButton implements ActionListener{
                         c.getDeclaredConstructor().newInstance();
                     }
                 }else if(radio.getSelected().equals("online")){
-                    System.out.println("database fetch");
+                    Fetch.fetch();
+                    DropButton.imported = new File(FileSystems.getDefault().getPath("output").toAbsolutePath().toString());
+                    c.getDeclaredConstructor().newInstance();
                 }else if(radio.getSelected().equals("default")){
-                    File localDir = new File("../public");
+                    Path path = FileSystems.getDefault().getPath("public").toAbsolutePath();
+                    File localDir = new File(path.toString()); 
+                    // File localDir = new File("../public");
                     if(localDir.listFiles() == null){
                         System.out.println("Images not loaded");
                         return;
@@ -48,3 +54,4 @@ public class Button extends JButton implements ActionListener{
         }
     }
 }
+

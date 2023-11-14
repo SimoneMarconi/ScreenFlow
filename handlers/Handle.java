@@ -1,9 +1,12 @@
 package handlers;
+
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.Random;
 import javax.imageio.ImageIO;
 
@@ -21,9 +24,12 @@ public class Handle {
         if(dpath != null){
             folder = dpath;
         }else{
-            folder = new File("../public");
+            Path path = FileSystems.getDefault().getPath("public").toAbsolutePath();
+            folder = new File(path.toString()); 
+            System.out.println("eccolo "+folder);
+            // folder = new File("../public");
         }
-        System.out.println(folder);
+        System.out.println("eccomi" + folder);
         fileList = folder.listFiles();
         if(fileList.length == 0){
             System.out.println("empty folder inserted");
@@ -66,3 +72,4 @@ public class Handle {
         return image;
     }
 }
+
