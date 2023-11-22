@@ -10,7 +10,7 @@ import javax.swing.JButton;
 
 public class Button extends JButton implements ActionListener{
 
-    private Class c;
+    private Class<?> c;
     private Radio radio;
 
     public <T> Button(String text, Class<T> c, Radio radio){
@@ -40,7 +40,6 @@ public class Button extends JButton implements ActionListener{
                 }else if(radio.getSelected().equals("default")){
                     Path path = FileSystems.getDefault().getPath("public").toAbsolutePath();
                     File localDir = new File(path.toString()); 
-                    // File localDir = new File("../public");
                     if(localDir.listFiles() == null){
                         System.out.println("Images not loaded");
                         return;
